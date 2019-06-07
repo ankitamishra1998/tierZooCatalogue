@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Facts</h1>
+<div mat-dialog-content class="showNotes">
+    <div *ngFor="let fact of facts">
+        <mat-card class="factCards">{{fact}}</mat-card>
+    </div>
+</div>
+
+<form class="factForm" #factForm="ngForm" >
+    <mat-form-field class="content">
+      <textarea matInput placeholder="add an interesting fact"  name="fact" required ngModel></textarea>
+    </mat-form-field>
+  </form>
+
+<div mat-dialog-actions>
+    <button class="cancelButton" mat-button color="warn" (click)="onNoClick()">Cancel</button>
+    <button  (click)="onAddFact(factForm)" class="saveButton" type="submit" mat-button color="primary">Save</button>
+  </div>
+

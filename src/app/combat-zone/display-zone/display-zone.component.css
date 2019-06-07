@@ -1,0 +1,33 @@
+.cardBuild{
+  width: 300px;
+  height: 200px;
+}
+
+.buildImage{
+  width: 200px;
+  height: 150px;
+  /* margin-left: 50px; */
+}
+
+.audioIcon{
+  position: absolute;
+  margin-left: 40px;
+}
+
+.changeImageIcon{
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 55px;
+}
+
+input[type="file"]{
+  visibility: hidden;
+  position: absolute;
+}
+
+.addNotesIcon{
+  position: absolute;
+  margin-left: 40px;
+  margin-top: 115px;
+}
+

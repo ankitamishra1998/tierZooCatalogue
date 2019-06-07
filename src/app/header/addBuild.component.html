@@ -1,0 +1,123 @@
+<h1 mat-dialog-title>Add Build</h1>
+<div mat-dialog-content class="addBuildContent">
+  <form  #buildForm="ngForm">
+
+    <mat-form-field class="name">
+      <input
+        matInput
+        type="text"
+        name="name"
+        ngModel
+        required
+        placeholder="name">
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-select [(ngModel)]="tier"  [ngModelOptions]="{standalone: true}" placeholder="tier">
+          <mat-option value="S">S</mat-option>
+          <mat-option value="A">A</mat-option>
+          <mat-option value="B">B</mat-option>
+          <mat-option value="C">C</mat-option>
+          <mat-option value="D">D</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field >
+        <mat-select [(ngModel)]="country"  [ngModelOptions]="{standalone: true}" placeholder="location"  >
+            <mat-option *ngFor="let country of countryData"
+            [value]="country">{{country.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="intelligence">
+      <input
+        matInput
+        type="number"
+        name="intelligence"
+        ngModel
+        required
+        placeholder="intelligence"
+        min="0"
+        max="100"
+      >
+      <img class="intelligenceStatIcon" src="../../assets/intelligenceStat.png">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        name="power"
+        ngModel
+        required
+        placeholder="power"
+        min="0"
+        max="100"
+      >
+      <img class="powerStatIcon" src="../../assets/powerStat.png">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        name="defense"
+        ngModel
+        required
+        placeholder="defense"
+        min="0"
+        max="100"
+      >
+      <img class="defenseStatIcon" src="../../assets/defenseStat.png">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        name="mobility"
+        ngModel
+        required
+        placeholder="mobility"
+        min="0"
+        max="100"
+      >
+      <img class="mobilityStatIcon" src="../../assets/mobilityStat.png">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        name="health"
+        ngModel
+        required
+        placeholder="health"
+        min="0"
+        max="100"
+      >
+      <img class="healthStatIcon" src="../../assets/healthStat.png">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        name="stealth"
+        ngModel
+        required
+        placeholder="stealth"
+        min="0"
+        max="100"
+      >
+      <img class="stealthStatIcon" src="../../assets/stealthStat.png">
+    </mat-form-field>
+
+
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button class="cancelButton" mat-button color="warn" (click)="onNoClick()">Cancel</button>
+  <button  (click)="onSubmitBuild(buildForm)" class="saveButton" type="submit" mat-button color="primary">Save</button>
+</div>

@@ -1,0 +1,28 @@
+<mat-drawer-container class="mainContainer">
+  <mat-drawer class="sidenav" mode="side" opened>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>Vital Stats Ordering</mat-expansion-panel-header>
+        <mat-list role='list' *ngFor="let vital of vitals">
+          <button (click)="sortByVital(vital.property)" mat-button >{{vital.value}}</button>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>Tier Filtering</mat-expansion-panel-header>
+        <mat-list role='list' *ngFor="let tier of tiers">
+          <button (click)="filterByTier(tier.property)" mat-button >{{tier.value}}</button>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>Location Filtering</mat-expansion-panel-header>
+        <mat-list role='list' *ngFor="let location of countryData">
+            <button (click)="filterByLocation(location.name)" mat-button >{{location.name}}</button>
+          </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-display-zone></app-display-zone>
+  </mat-drawer-content>
+</mat-drawer-container>
+<!-- <p> combat zone works!</p> -->

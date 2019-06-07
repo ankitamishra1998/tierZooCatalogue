@@ -1,0 +1,24 @@
+<mat-grid-list *ngFor="let build of builds" cols="3" rowHeight="1.5:1">
+  <mat-grid-tile>
+    <mat-card class="cardBuild">
+      <p>{{build.name}}</p>
+      <img class="buildImage" src={{build.image}}>
+      <button (click)="filePicker.click()" class="audioIcon" mat-icon-button>
+        <mat-icon >add_a_photo</mat-icon>
+      </button>
+      <input type="file" name="image" #filePicker (change)="onAddImage($event, build)">
+      <button (click)="onShowNotes(build.id)" class="changeImageIcon" mat-icon-button>
+        <mat-icon >notes</mat-icon>
+      </button>
+      <button (click)="onDeleteBuild(build.id)" class="addNotesIcon" mat-icon-button>
+        <mat-icon >delete</mat-icon>
+      </button>
+    </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="2">
+    <!-- <div  id='container1' style="width: 350px; height: 250px">{{build.containerId}}</div> -->
+  <app-vitals-chart [build]='build'></app-vitals-chart>
+  <!-- <p>{{build.containerId}}</p> -->
+</mat-grid-tile>
+
+</mat-grid-list>
