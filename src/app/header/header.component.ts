@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
   openAddBuildDialog() : void {
-    const dialogRef = this.dialog.open(AddBuildDialogComponent, {
+    const dialogRef = this.dialog.open( AddBuildDialogComponent, {
       width: '400px'
     });
 
